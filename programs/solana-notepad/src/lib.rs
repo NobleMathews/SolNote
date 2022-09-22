@@ -18,7 +18,7 @@ pub mod solana_notepad {
         let clock: Clock = Clock::get().unwrap();
 
         if content.chars().count() > 500 {
-            return Err(ErrorCode::ContentTooLong.into())
+            return Err(ErrorCode::ContentTooLong.into());
         }
 
         note.author = *author.key;
@@ -38,7 +38,6 @@ pub struct SendNote<'info> {
     pub system_program: Program<'info, System>,
 }
 
-// 1. Define the structure of the Note account.
 #[account]
 pub struct Note {
     pub author: Pubkey,
@@ -46,17 +45,15 @@ pub struct Note {
     pub content: String,
 }
 
-// 2. Add some useful constants for sizing propeties.
 const DISCRIMINATOR_LENGTH: usize = 8;
 const PUBLIC_KEY_LENGTH: usize = 32;
 const TIMESTAMP_LENGTH: usize = 8;
-const STRING_LENGTH_PREFIX: usize = 4; // Stores the size of the string.
-const MAX_CONTENT_LENGTH: usize = 500 * 4; // 280 chars max.
+const STRING_LENGTH_PREFIX: usize = 4;
+const MAX_CONTENT_LENGTH: usize = 500 * 4;
 
-// 3. Add a constant on the Note account that provides its total size.
 impl Note {
     const LEN: usize = DISCRIMINATOR_LENGTH
         + PUBLIC_KEY_LENGTH // Author.
         + TIMESTAMP_LENGTH // Timestamp.
-        + STRING_LENGTH_PREFIX + MAX_CONTENT_LENGTH; // Content.
+        + STRING_LENGTH_PREFIX + MAX_CONTENT_LENGTH;
 }
