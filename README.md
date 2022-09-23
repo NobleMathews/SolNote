@@ -4,13 +4,13 @@
 [SolNote](https://solnote.netlify.app/#/CLBPq8qTfjQshdanMUiHvU6ynbvSjZaTbUBYrFYLnqNE)
 
 ## 💡 Inspiration
-- We wanted to harness the power of Blockchain technology to help users share notes with others anonymously that can be accessed by anyone in the world
+- We wanted to harness the power of **Blockchain technology** to help users **share notes** with others anonymously that can be accessed by anyone in the world
 - Use decentralization to enable ease of shareability with data being in our own control. Data gone once we choose to delete and take off blockchain
 - The users can also see what others have written without knowing other details of the person who shared it. 
 - This ensures anyone can access the notes but cannot corrupt them.
 
 ## 📝 What it does
-- SolNote is a Blockchain-based note-taking Dapp based on Solana Blockchain
+- SolNote is a **Blockchain-based note-taking Dapp** based on **Solana Blockchain**
 - The users can link popular wallets of Solana to write, edit and delete snippets and share them anonymously with the help of Blockchain using a link
 - Currently we have a 500 character limit per note
 - Once we reach the limit, the color changes to red to give a warning
@@ -26,7 +26,7 @@
 - Made a timeline on how we can divide complete it in a short time
 - Decided on which languages and frameworks to use for the project
 - Start coding!
-- We tested it out using Phantom
+- We tested it out using **Phantom**
 - Solved the challenges we faced
 - Yay! Finally we had **SolNote** working.
 
@@ -52,4 +52,4 @@
 - Add a **Pagination feature** as we scale up so that we only query what we require server side. Currently, we are not facing any issues as we are not dealing with large corpus
 - Support for variable sized content and self-terminating notes. Based on a rent system, we can assign only enough rent to an account such that it deletes itself once a set time is reached when it will become unable to pay the rent
 - Support for more varied kinds of content like video, images, voice features and other multimedia
-- Add features for collaboration and shared notes
+- Add features for **collaboration** and **shared notes**
