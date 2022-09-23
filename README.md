@@ -20,6 +20,15 @@
 - Snippets can be shared securely and anonymously using SolNote
 - It is a decentralized, secure, verified, and anonymous file-sharing system based on the foundations of blockchain technology
 
+## 🖥️ Languages used
+- Vue
+- JavaScript
+- TypeScript
+- Rust
+- HTML
+- CSS
+- Shell
+
 ## 🔥 How we built it
 - Ideated on what we can build using Solana Blockchain that solves a real-world problem
 - Planned on how we can turn our idea into a project
