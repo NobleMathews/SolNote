@@ -4,6 +4,17 @@ import { useWorkspace } from "@/composables";
 import { deleteNote } from "@/api";
 import NoteFormUpdate from "./NoteFormUpdate";
 
+import { router } from "../../src/main";
+
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faTrash, faEdit, faLink } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { useToast } from "vue-toast-notification";
+import "vue-toast-notification/dist/theme-sugar.css";
+const $toast = useToast();
+
+library.add(faTrash, faEdit, faLink);
+
 const emit = defineEmits(["delete"]);
 const props = defineProps({
   note: Object,
@@ -12,6 +23,17 @@ const props = defineProps({
 const onDelete = async () => {
   await deleteNote(note.value);
   emit("delete", note.value);
+  $toast.error("Note deleted successfully");
+};
+
+const onCopy = (key) => {
+  const resolved = router.resolve({
+    name: "Note",
+    params: { note: key.toBase58() },
+  });
+  const absoluteURL = new URL(resolved.href, window.location.origin).href;
+  navigator.clipboard.writeText(absoluteURL);
+  $toast.success("Link to Note copied to clipboard!");
 };
 
 const { note } = toRefs(props);
@@ -50,39 +72,21 @@ const isEditing = ref(false);
             class="flex px-2 rounded-full text-gray-500 hover:text-red-500 hover:bg-gray-100"
             title="Update Note"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 m-auto"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"
-              />
-              <path
-                fill-rule="evenodd"
-                d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                clip-rule="evenodd"
-              />
-            </svg>
+            <font-awesome-icon :icon="['fas', 'edit']" />
+          </button>
+          <button
+            @click="onCopy(note.publicKey)"
+            class="flex px-2 rounded-full text-gray-500 hover:text-green-500 hover:bg-gray-100"
+            title="Copy Link to Note"
+          >
+            <font-awesome-icon :icon="['fas', 'link']" />
           </button>
           <button
             @click="onDelete"
             class="flex px-2 rounded-full text-gray-500 hover:text-blue-500 hover:bg-gray-100"
             title="Delete Note"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 m-auto"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                clip-rule="evenodd"
-              />
-            </svg>
+            <font-awesome-icon :icon="['fas', 'trash']" />
           </button>
         </div>
       </div>
