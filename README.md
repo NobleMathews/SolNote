@@ -1,1 +1,18 @@
-# Sol-Note
+# SolNote
+
+## Inspiration
+
+## What it does
+
+## How we built it
+
+## Challenges we ran into
+
+## Accomplishments that we're proud of
+
+## What we learned
+
+### Arunima
+### Noble
+
+## What's next
