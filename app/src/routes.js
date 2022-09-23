@@ -6,7 +6,7 @@ export default [
   },
   {
     name: "Note",
-    path: "/note/:note",
+    path: "/:note",
     component: require("@/components/PageNote").default,
   },
   {

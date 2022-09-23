@@ -9,6 +9,7 @@ import {
   SolletWalletAdapter,
 } from "@solana/wallet-adapter-wallets";
 import { initWallet } from "solana-wallets-vue";
+import { initWorkspace } from "./composables";
 
 const route = useRoute();
 
@@ -21,10 +22,11 @@ const wallets = [
 ];
 
 initWallet({ wallets, autoConnect: true });
+initWorkspace();
 </script>
 
 <template>
-  <div class="w-full max-w-3xl lg:max-w-4xl mx-auto">
+  <div class="w-full max-w-4xl lg:max-w-5xl mx-auto">
     <main-sidebar
       class="py-4 md:py-8 md:pl-4 md:pr-8 fixed w-20 md:w-64"
     ></main-sidebar>
