@@ -40,6 +40,11 @@
 - Yay! Finally we had **SolNote** working.
 
 ## ⚙️ Challenges we ran into
+- We both were new to the Blockchain technology
+- Get quickly familiar with the Solana Blockchain and use it in a project
+- Debugging instructions that were continuously failing to execute on the Blockchain
+- We then decided to port over to Anchor API which simplified much of the boilerplate code. But even that was quite vast
+- Figuring out heuristics which would work best for this usecase and the overall structure of the contract and accounts systems
 
 ## 🏅 Accomplishments that we're proud of
 - Got familiar with the Solana Blockchain and applied it to make a project in a short time
