@@ -27,7 +27,6 @@
 - Rust
 - HTML
 - CSS
-- Shell
 
 ## 🔥 How we built it
 - Ideated on what we can build using the Solana Blockchain that solves a real-world problem
@@ -63,6 +62,7 @@
 
 ## 📌 What's next
 - Add a feature for allowing users to upload **password-protected private notes**
+- Storage Side it would make more sense to use a DSN like arweave when actual currency is involved
 - Add a **Pagination feature** as we scale up so that we only query what we require server side. Currently, we are not facing any issues as we are not dealing with a large corpus
 - Support for variable-sized content and self-terminating notes. Based on a rent system, we can assign only enough rent to an account such that it deletes itself once a set time is reached when it will become unable to pay the rent
 - Support for more varied kinds of content like video, images, voice features and other multimedia
