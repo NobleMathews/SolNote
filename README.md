@@ -13,8 +13,8 @@
 - Got familiar with the Solana Blockchain and applied it to make a project in a short time
 - Create something from nothing. We both started from scratch, but ended up making it!
 - Challenged our brain to find innovative solutions to solve the challenges
-- Enjoy creative and collaborative week learning a lot of new things together
-Overall, it was a fantastic experience!
+- Enjoyed creative and collaborative week learning a lot of new things together
+- Overall, it was a fantastic experience!
 
 ## What we learned
 - Got familiar with the Solana Blockchain
