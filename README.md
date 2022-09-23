@@ -11,7 +11,7 @@
 
 ## Accomplishments that we're proud of
 - Got familiar with the Solana Blockchain and applied it to make a project in a short time
-- Create something from nothing. We both started from scratch, but ended up making it!
+- Created something from nothing. We both started from scratch, but ended up making it!
 - Challenged our brain to find innovative solutions to solve the challenges
 - Enjoyed creative and collaborative week learning a lot of new things together
 - Overall, it was a fantastic experience!
@@ -20,7 +20,7 @@
 - Got familiar with the Solana Blockchain
 - Best practices of using tools like Git & GitHub
 - The best practices of pair programming on a project
-- How to plan & collaborate to complete a task in a short period of time.
+- How to plan & collaborate to complete a task in a short period of time
 - Attention to details
 - How to quickly learn a new skill
 
