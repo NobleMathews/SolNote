@@ -3,6 +3,9 @@ import { useWallet } from "solana-wallets-vue";
 import { computed, ref } from "vue";
 import { useAutoresizeTextarea, useCountCharacterLimit } from "@/composables";
 import { sendNote } from "@/api";
+import { useToast } from "vue-toast-notification";
+import "vue-toast-notification/dist/theme-sugar.css";
+const $toast = useToast();
 
 const content = ref("");
 const textarea = ref();
@@ -22,8 +25,14 @@ const emit = defineEmits(["added"]);
 const send = async () => {
   if (!canNote.value) return;
   const note = await sendNote(content.value);
+  const absoluteURL = new URL(
+    "/#/" + note.publicKey.toBase58(),
+    window.location.origin
+  );
+  navigator.clipboard.writeText(absoluteURL);
   emit("added", note);
   content.value = "";
+  $toast.success("Link to Note copied to clipboard!");
 };
 </script>
 

@@ -9,6 +9,9 @@ import { router } from "../../src/main";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faTrash, faEdit, faLink } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
+import { useToast } from "vue-toast-notification";
+import "vue-toast-notification/dist/theme-sugar.css";
+const $toast = useToast();
 
 library.add(faTrash, faEdit, faLink);
 
@@ -20,6 +23,7 @@ const props = defineProps({
 const onDelete = async () => {
   await deleteNote(note.value);
   emit("delete", note.value);
+  $toast.error("Note deleted successfully");
 };
 
 const onCopy = (key) => {
@@ -29,6 +33,7 @@ const onCopy = (key) => {
   });
   const absoluteURL = new URL(resolved.href, window.location.origin).href;
   navigator.clipboard.writeText(absoluteURL);
+  $toast.success("Link to Note copied to clipboard!");
 };
 
 const { note } = toRefs(props);
