@@ -5,7 +5,7 @@ import App from "./App.vue";
 import "solana-wallets-vue/styles.css";
 import "./main.css";
 
-const router = createRouter({
+export const router = createRouter({
   history: createWebHashHistory(),
   routes,
 });
