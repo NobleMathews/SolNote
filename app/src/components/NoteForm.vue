@@ -1,16 +1,13 @@
 <script setup>
+import { useWallet } from "solana-wallets-vue";
 import { computed, ref } from "vue";
 import { useAutoresizeTextarea, useCountCharacterLimit } from "@/composables";
 import { sendNote } from "@/api";
 
-// Form data.
 const content = ref("");
-
-// Auto-resize the content's textarea.
 const textarea = ref();
 useAutoresizeTextarea(textarea);
 
-// Character limit / count-down.
 const characterLimit = useCountCharacterLimit(content, 500);
 const characterLimitColour = computed(() => {
   if (characterLimit.value < 0) return "text-red-500";
@@ -18,12 +15,10 @@ const characterLimitColour = computed(() => {
   return "text-gray-400";
 });
 
-// Permissions.
-const connected = ref(true); // TODO: Check connected wallet.
+const connected = useWallet().connected;
 const canNote = computed(() => content.value && characterLimit.value > 0);
-
-// Actions.
 const emit = defineEmits(["added"]);
+
 const send = async () => {
   if (!canNote.value) return;
   const note = await sendNote(content.value);
@@ -45,10 +40,7 @@ const send = async () => {
 
     <div class="flex flex-wrap items-center justify-between -m-2">
       <div class="flex items-center space-x-6 m-2 ml-auto">
-        <!-- Character limit. -->
         <div :class="characterLimitColour">{{ characterLimit }} left</div>
-
-        <!-- Note button. -->
         <button
           class="text-black px-4 py-2 rounded-full font-semibold"
           :disabled="!canNote"
@@ -64,6 +56,6 @@ const send = async () => {
   </div>
 
   <div v-else class="px-8 py-4 bg-gray-50 text-gray-500 text-center border-b">
-    Connect your wallet to start noteing...
+    Connect your wallet so we can turn your SOL into Notes 💸...
   </div>
 </template>

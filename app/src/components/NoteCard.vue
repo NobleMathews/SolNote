@@ -10,15 +10,16 @@ const { note } = toRefs(props);
 
 <template>
   <div class="px-8 py-4">
-    <div>
-      <span class="text-gray-500"> • </span>
+    <router-link
+      :to="{ name: 'Note', params: { note: note.publicKey.toBase58() } }"
+      tag="div"
+    >
       <time class="text-gray-500 text-sm" :title="note.created_at">
-        <!-- TODO: Link to the note page. -->
-        <router-link :to="{ name: 'SolNote' }" class="hover:underline">
+        <div>
           {{ note.created_ago }}
-        </router-link>
+        </div>
       </time>
-    </div>
-    <p class="whitespace-pre-wrap" v-text="note.content"></p>
+      <p class="whitespace-pre-wrap" v-text="note.content"></p>
+    </router-link>
   </div>
 </template>
