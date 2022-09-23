@@ -4,13 +4,13 @@
 [SolNote](https://solnote.netlify.app/#/CLBPq8qTfjQshdanMUiHvU6ynbvSjZaTbUBYrFYLnqNE)
 
 ## 💡 Inspiration
-- We wanted to harness the power of **Blockchain technology** to help users **share notes** with others anonymously that can be accessed by anyone in the world
-- Use decentralization to enable ease of shareability with data being in our own control. Data gone once we choose to delete and take off blockchain
-- The users can also see what others have written without knowing other details of the person who shared it. 
-- This ensures anyone can access the notes but cannot corrupt them.
+- We wanted to harness the power of **Blockchain technology** to help users **share notes** with others anonymously that can be accessed by anyone around the world
+- Use decentralization to enable ease of shareability with data being in our own control. Data gone once we choose to delete it and take off the blockchain
+- The users can also see what others have written without knowing other details of the person who shared it
+- This ensures anyone can access the notes but cannot corrupt them
 
 ## 📝 What it does
-- SolNote is a **Blockchain-based note-taking Dapp** based on **Solana Blockchain**
+- SolNote is a **Blockchain-based note-taking Dapp** using **Solana Blockchain**
 - The users can link popular wallets of Solana to write, edit and delete snippets and share them anonymously with the help of Blockchain using a link
 - Currently we have a 500 character limit per note
 - Once we reach the limit, the color changes to red to give a warning
@@ -30,12 +30,12 @@
 - Shell
 
 ## 🔥 How we built it
-- Ideated on what we can build using Solana Blockchain that solves a real-world problem
+- Ideated on what we can build using the Solana Blockchain that solves a real-world problem
 - Planned on how we can turn our idea into a project
-- Made a timeline on how we can divide complete it in a short time
+- Made a timeline on how we can divide the tasks & complete it in a short time
 - Decided on which languages and frameworks to use for the project
 - Start coding!
-- We tested it out using **Phantom**
+- Tested it out using **Phantom**
 - Solved the challenges we faced
 - Yay! Finally we had **SolNote** working.
 
