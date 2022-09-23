@@ -27,6 +27,43 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "updateNote",
+      "accounts": [
+        {
+          "name": "note",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "author",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "content",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "deleteNote",
+      "accounts": [
+        {
+          "name": "note",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "author",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": []
     }
   ],
   "accounts": [
