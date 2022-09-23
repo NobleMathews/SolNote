@@ -1,5 +1,7 @@
 # SolNote
 ![image](https://user-images.githubusercontent.com/62856848/191882587-90dfed26-77fa-4a4a-87c2-4644d941853b.png)
+### Try it out!
+[SolNote](https://solnote.netlify.app/#/CLBPq8qTfjQshdanMUiHvU6ynbvSjZaTbUBYrFYLnqNE)
 
 ## 💡 Inspiration
 
