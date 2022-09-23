@@ -27,6 +27,29 @@ pub mod solana_notepad {
 
         Ok(())
     }
+
+    pub fn update_note(ctx: Context<UpdateNote>, content: String) -> Result<()> {
+        let note: &mut Account<Note> = &mut ctx.accounts.note;
+
+        if content.chars().count() > 500 {
+            return Err(ErrorCode::ContentTooLong.into());
+        }
+
+        note.content = content;
+
+        Ok(())
+    }
+
+    pub fn delete_note(_ctx: Context<DeleteNote>) -> Result<()> {
+        Ok(())
+    }
+}
+
+#[derive(Accounts)]
+pub struct UpdateNote<'info> {
+    #[account(mut, has_one = author)]
+    pub note: Account<'info, Note>,
+    pub author: Signer<'info>,
 }
 
 #[derive(Accounts)]
@@ -36,6 +59,13 @@ pub struct SendNote<'info> {
     #[account(mut)]
     pub author: Signer<'info>,
     pub system_program: Program<'info, System>,
+}
+
+#[derive(Accounts)]
+pub struct DeleteNote<'info> {
+    #[account(mut, has_one = author, close = author)]
+    pub note: Account<'info, Note>,
+    pub author: Signer<'info>,
 }
 
 #[account]

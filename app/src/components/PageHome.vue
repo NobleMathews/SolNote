@@ -22,6 +22,6 @@ const addNote = (note) => notes.value.push(note);
 <template>
   <note-form @added="addNote"></note-form>
   <div v-if="wallet" class="border-b px-8 py-4 bg-gray-50">
-    <note-list :notes="notes" :loading="loading"></note-list>
+    <note-list v-model:notes="notes" :loading="loading"></note-list>
   </div>
 </template>
