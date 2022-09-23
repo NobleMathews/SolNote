@@ -12,7 +12,6 @@ const { note } = toRefs(props);
   <div class="px-8 py-4">
     <router-link
       :to="{ name: 'Note', params: { note: note.publicKey.toBase58() } }"
-      tag="div"
     >
       <time class="text-gray-500 text-sm" :title="note.created_at">
         <div>

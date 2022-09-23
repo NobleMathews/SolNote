@@ -7,7 +7,7 @@ import { computed } from "vue";
 const clusterUrl = process.env.VUE_APP_CLUSTER_URL;
 const programID = new PublicKey(idl.metadata.address);
 const preflightCommitment = "processed";
-const commitment = "processaned";
+const commitment = "processed";
 let workspace = null;
 
 export const useWorkspace = () => workspace;
